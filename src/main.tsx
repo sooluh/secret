@@ -3,8 +3,8 @@ import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
 
 ReactDOM.render(
-    <ChakraProvider resetCSS>
-        <App />
-    </ChakraProvider>,
-    document.getElementById('root')
+  <ChakraProvider resetCSS>
+    <App />
+  </ChakraProvider>,
+  document.getElementById('root')
 )
