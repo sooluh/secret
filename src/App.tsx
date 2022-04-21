@@ -38,13 +38,14 @@ const App: FC = () => {
           fontWeight="normal"
           letterSpacing="0.5px"
         >
-          Ungkapin aja apapun yang pengen kamu sampein 😉
+          Ketikin apapun yang kamu pengen sampein ke aku, tapi inget, jangan
+          nyeleneh yaa 🥰
         </Text>
 
         <Form refresher={refresh} />
         <Divider orientation="horizontal" w="full" my="6" />
 
-        <Stack spacing="6" direction="column-reverse" mb="8">
+        <Stack spacing="4" direction="column-reverse" mb="6">
           {data ? (
             data.map(item => (
               <Card

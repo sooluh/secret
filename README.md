@@ -1,6 +1,6 @@
-# Secret-in
+# Confess-in :lock:
 
-A secreto like anonymous message. This project was bootstrapped with [Vitejs (react)](https://vitejs.dev/) and powered by [Supabase](https://supabase.io/) with [Chakra UI](https://chakra-ui.com/)
+Secreto-like anonymous messaging app. This project was bootstrapped with [Vite (react)](https://vitejs.dev/) and powered by [Supabase](https://supabase.io/) with [Chakra UI](https://chakra-ui.com/)
 
 To run local server use:
 
@@ -17,8 +17,6 @@ yarn build
 Environment variable needed:
 
 ```
-SUPABASE_URL=
-SUPABASE_ANON=
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON=
 ```
-
-@ 2021 [MIT License](https://opensource.org/licenses/MIT). Reynadi
