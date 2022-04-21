@@ -10,7 +10,7 @@ const fetch = async () => {
     .from('confess')
     .select()
     .order('created_at', {
-      ascending: true
+      ascending: false
     })
 
   if (error) {

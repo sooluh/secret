@@ -45,7 +45,7 @@ const App: FC = () => {
         <Form refresher={refresh} />
         <Divider orientation="horizontal" w="full" my="6" />
 
-        <Stack spacing="4" direction="column-reverse" mb="6">
+        <Stack spacing="4" direction="column" mb="6">
           {data ? (
             data.map(item => (
               <Card
