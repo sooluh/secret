@@ -51,7 +51,7 @@ const App: FC = () => {
         <Text
           textAlign="center"
           backgroundColor={background}
-          p="4"
+          p="6"
           rounded="xl"
           w="full"
           fontSize="md"
