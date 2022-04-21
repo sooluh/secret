@@ -1,12 +1,12 @@
 import { FC, useState } from 'react'
 import { Box, Textarea, Text, Button, VStack } from '@chakra-ui/react'
-import { send } from '../libs/fetchData'
+import { send } from '../libs/fetcher'
 
 const Form: FC<{ refresher: any }> = ({ refresher }) => {
   const [message, set] = useState('')
 
   const submit = async () => {
-    if (String(message).length == 0) return
+    if (String(message).trim().length == 0) return
 
     const data = await send(message)
     refresher()

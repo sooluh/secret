@@ -9,7 +9,7 @@ import {
 import Navbar from './components/Navbar'
 import Form from './components/Form'
 import Card from './components/Card'
-import fetch from './libs/fetchData'
+import fetch from './libs/fetcher'
 
 const App: FC = () => {
   const [data, set] = useState<any[]>()
@@ -20,7 +20,27 @@ const App: FC = () => {
   }, [])
 
   const refresh = () => {
-    fetch().then((item: any) => set(item))
+    fetch().then((data: any) => {
+      const childrens = (data as any).filter((item: any) => {
+        return item.parent != null
+      })
+
+      const parents = (data as any)
+        .filter((item: any) => {
+          return item.parent == null
+        })
+        .map((parent: any) => {
+          const children = childrens.filter((child: any) => {
+            return child.parent == parent.id
+          })
+
+          parent.children = children.length > 0 ? children.shift().message : ''
+
+          return parent
+        })
+
+      set(parents)
+    })
   }
 
   return (
@@ -31,7 +51,7 @@ const App: FC = () => {
         <Text
           textAlign="center"
           backgroundColor={background}
-          p="8"
+          p="4"
           rounded="xl"
           w="full"
           fontSize="md"
@@ -53,6 +73,7 @@ const App: FC = () => {
                 date={new Date(item.created_at).toLocaleString()}
                 message={item.message}
                 background={background}
+                children={item.children}
               />
             ))
           ) : (

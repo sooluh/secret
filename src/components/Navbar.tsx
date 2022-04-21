@@ -23,10 +23,12 @@ const Navbar: FC = () => {
               fontSize="xl"
               letterSpacing="0.5px"
             >
-              Confess-in
+              Confess
             </Text>
           </Box>
+
           <Spacer />
+
           <Box>
             <IconButton
               aria-label="Theme toggle"
