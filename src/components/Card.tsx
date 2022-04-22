@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Box, Spacer, Stack, Text } from '@chakra-ui/react'
 import moment from 'moment'
+import { Box, Spacer, Stack, Text } from '@chakra-ui/react'
 
 const Card: FC<{
   message: string

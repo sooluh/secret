@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { FaSun, FaMoon } from 'react-icons/fa'
 import {
   Box,
   Flex,
@@ -7,7 +8,6 @@ import {
   IconButton,
   useColorMode
 } from '@chakra-ui/react'
-import { FaSun, FaMoon } from 'react-icons/fa'
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()

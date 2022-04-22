@@ -6,9 +6,9 @@ import {
   Divider,
   Stack
 } from '@chakra-ui/react'
-import Navbar from './components/Navbar'
 import Form from './components/Form'
 import Card from './components/Card'
+import Navbar from './components/Navbar'
 import results from './libs/fetcher'
 
 const App: FC = () => {

@@ -1919,12 +1919,28 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-detect-offline@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@types/react-detect-offline/-/react-detect-offline-2.4.1.tgz#5a71625d3614a56a6c3dacc53c5e9baed0610de0"
+  integrity sha512-ympSl07fvDbu7+EsnhrKwDWkdOqHp22lukhJYIHxnTfSIzOh1T/K9NGmpwKUtgJaNCfllwLvMSXBlyC6nHEObw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^17.0.10":
   version "17.0.15"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.15.tgz#f2c8efde11521a4b7991e076cb9c70ba3bb0d156"
   integrity sha512-Tr9VU9DvNoHDWlmecmcsE5ZZiUkYx+nKBzum4Oxe1K0yJVyBlfbq7H3eXjxXqJczBKqPGq3EgfTru4MgKb9+Yw==
   dependencies:
     "@types/react" "^17"
+
+"@types/react@*":
+  version "18.0.6"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.6.tgz#30206c3830af6ce8639b91ace5868bc2d3d1d96c"
+  integrity sha512-bPqwzJRzKtfI0mVYr5R+1o9BOE8UEXefwc1LwcBtfnaAn6OoqMhLa/91VA8aeWfDPJt1kHvYKI8RHcQybZLHHA==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
 
 "@types/react@^17", "@types/react@^17.0.33":
   version "17.0.44"
@@ -3793,6 +3809,11 @@ react-clientside-effect@^1.2.5:
   integrity sha512-2bL8qFW1TGBHozGGbVeyvnggRpMjibeZM2536AKNENLECutp2yfs44IL8Hmpn8qjFQ2K7A9PnYf3vc7aQq/cPA==
   dependencies:
     "@babel/runtime" "^7.12.13"
+
+react-detect-offline@^2.4.5:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/react-detect-offline/-/react-detect-offline-2.4.5.tgz#3c242516c37b6789cf89102881031f87e70b80e6"
+  integrity sha512-sI13NPEKl3uQp95FT5CwrYzH3DnXCwNP6TnY6NRF5gFDM4NU9KDlbtA6HG2dwhDVS0RYQGXwZW/mHbdf8fCnaw==
 
 react-dom@^17.0.2:
   version "17.0.2"

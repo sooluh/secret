@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom'
 import App from './App'
+import ReactDOM from 'react-dom'
 import { ChakraProvider } from '@chakra-ui/react'
 
 if (typeof window !== 'undefined') {
