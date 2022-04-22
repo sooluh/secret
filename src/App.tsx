@@ -70,7 +70,7 @@ const App: FC = () => {
                 key={'message-' + item.id}
                 message={item.message}
                 background={background}
-                date={item.date}
+                date={item.created_at}
                 childrens={item.childrens}
               />
             ))

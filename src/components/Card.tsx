@@ -8,7 +8,7 @@ const Card: FC<{
   date: string
   childrens: any[]
 }> = ({ message, background, date, childrens }) => {
-  date = moment(date).locale('id').format('DD MMM YYYY, hh:mm')
+  date = moment(date).locale('id').format('DD MMM YYYY HH:mm')
 
   return (
     <>
