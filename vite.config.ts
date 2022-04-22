@@ -9,7 +9,46 @@ export default defineConfig({
       registerType: 'autoUpdate',
       workbox: {
         cleanupOutdatedCaches: false,
-        sourcemap: true
+        sourcemap: true,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fontbit\.io\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fontbit-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/[a-z0-9]+\.supabase\.co\/?.*/i,
+            handler: 'NetworkFirst',
+            options: {
+              networkTimeoutSeconds: 20,
+              cacheName: 'supabase-cache',
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            handler: 'NetworkOnly',
+            urlPattern: /^https:\/\/[a-z0-9]+\.supabase\.co\/?.*/i,
+            options: {
+              backgroundSync: {
+                name: 'supabase-queue',
+                options: {
+                  maxRetentionTime: 24 * 60
+                }
+              }
+            }
+          }
+        ]
       },
       manifest: {
         name: 'Confess ke Suluh',
