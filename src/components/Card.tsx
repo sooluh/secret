@@ -11,37 +11,35 @@ const Card: FC<{
   date = moment(date).locale('id').format('DD MMM YYYY HH:mm')
 
   return (
-    <>
-      <Box w="full" p={4} rounded="xl" backgroundColor={background}>
-        <Stack direction="column">
-          <Box>
-            <Text>{message}</Text>
-            <Text fontSize="xs" textColor="gray.500">
-              {date}
-            </Text>
-          </Box>
+    <Box w="full" p={4} rounded="xl" backgroundColor={background}>
+      <Stack direction="column">
+        <Box>
+          <Text>{message}</Text>
+          <Text fontSize="xs" textColor="gray.500">
+            {date}
+          </Text>
+        </Box>
 
-          {childrens.length > 0 ? (
-            <>
-              <Spacer />
+        {childrens.length > 0 ? (
+          <>
+            <Spacer />
 
-              <Stack spacing="2" direction="column-reverse">
-                {childrens.map(child => (
-                  <Box
-                    key={'replies-' + child.id}
-                    borderLeft="2px"
-                    borderColor="gray.500"
-                    pl={3}
-                  >
-                    <Text>{child.message}</Text>
-                  </Box>
-                ))}
-              </Stack>
-            </>
-          ) : null}
-        </Stack>
-      </Box>
-    </>
+            <Stack spacing="2" direction="column-reverse">
+              {childrens.map(child => (
+                <Box
+                  key={'replies-' + child.id}
+                  borderLeft="2px"
+                  borderColor="gray.500"
+                  pl={3}
+                >
+                  <Text>{child.message}</Text>
+                </Box>
+              ))}
+            </Stack>
+          </>
+        ) : null}
+      </Stack>
+    </Box>
   )
 }
 

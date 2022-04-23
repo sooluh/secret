@@ -10,5 +10,5 @@ ReactDOM.render(
   <ChakraProvider resetCSS>
     <App />
   </ChakraProvider>,
-  document.getElementById('root')
+  document.getElementById('app')
 )

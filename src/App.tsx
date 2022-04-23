@@ -4,28 +4,27 @@ import {
   Text,
   useColorModeValue,
   Divider,
-  Stack
+  Stack,
+  ScaleFade
 } from '@chakra-ui/react'
+
 import Form from './components/Form'
 import Card from './components/Card'
 import Navbar from './components/Navbar'
+
 import results from './libs/fetcher'
 
 const App: FC = () => {
-  const [data, set] = useState<any[]>()
+  const [messages, update] = useState<any[]>()
   const background = useColorModeValue('gray.50', 'gray.700')
 
-  useEffect(() => {
-    refresh()
-  }, [])
-
-  const refresh = () => {
-    results().then((data: any) => {
-      const childrens = (data as any).filter((item: any) => {
+  const reload = () => {
+    results().then((messages: any) => {
+      const childrens = messages.filter((item: any) => {
         return item.parent != null
       })
 
-      const parents = (data as any)
+      const parents = messages
         .filter((item: any) => {
           return item.parent == null
         })
@@ -37,35 +36,39 @@ const App: FC = () => {
           return parent
         })
 
-      set(parents)
+      update(parents)
     })
   }
 
+  useEffect(() => {
+    reload()
+  }, [])
+
   return (
-    <>
-      <Container maxW="container.lg" my="4">
-        <Navbar />
+    <Container maxW="container.lg" my="4">
+      <Navbar />
 
-        <Text
-          textAlign="center"
-          backgroundColor={background}
-          p="6"
-          rounded="xl"
-          w="full"
-          fontSize="md"
-          fontWeight="normal"
-          letterSpacing="0.5px"
-        >
-          Ketikin apapun yang kamu pengen sampein ke aku, tapi inget, jangan
-          nyeleneh yaa 🥰
-        </Text>
+      <Text
+        textAlign="center"
+        backgroundColor={background}
+        p="6"
+        rounded="xl"
+        w="full"
+        fontSize="md"
+        fontWeight="normal"
+        letterSpacing="0.5px"
+      >
+        Ketikin apapun yang kamu pengen sampein ke aku.. tapi inget yaa, gaboleh
+        nyeleneh lohh🥰
+      </Text>
 
-        <Form refresher={refresh} />
-        <Divider orientation="horizontal" w="full" my="6" />
+      <Form reloader={reload} />
+      <Divider orientation="horizontal" w="full" my="6" />
 
-        <Stack spacing="4" direction="column" mb="6">
-          {data ? (
-            data.map(item => (
+      <Stack spacing="4" direction="column" mb="6">
+        {messages ? (
+          messages.map(item => (
+            <ScaleFade initialScale={0.9} in={true}>
               <Card
                 key={'message-' + item.id}
                 message={item.message}
@@ -73,13 +76,13 @@ const App: FC = () => {
                 date={item.created_at}
                 childrens={item.childrens}
               />
-            ))
-          ) : (
-            <Text>Memuat ...</Text>
-          )}
-        </Stack>
-      </Container>
-    </>
+            </ScaleFade>
+          ))
+        ) : (
+          <Text>Memuat ...</Text>
+        )}
+      </Stack>
+    </Container>
   )
 }
 

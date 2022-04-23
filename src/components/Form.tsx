@@ -1,79 +1,59 @@
 import { FC, useState } from 'react'
-import { Offline, Online } from 'react-detect-offline'
-import {
-  Box,
-  Textarea,
-  Text,
-  Button,
-  VStack,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription
-} from '@chakra-ui/react'
+import { Online } from 'react-detect-offline'
+import { Box, Textarea, Text, Button, VStack, Spinner } from '@chakra-ui/react'
+
+import Success from './Success'
+import Offline from './Offline'
+
 import { send } from '../libs/fetcher'
 
-const Form: FC<{ refresher: any }> = ({ refresher }) => {
-  const [message, set] = useState('')
+const Form: FC<{ reloader: any }> = ({ reloader }) => {
+  const [confess, renew] = useState('')
+  const [status, post] = useState(1)
 
   const submit = async () => {
-    if (String(message).trim().length == 0) return
+    const value = String(confess).trim()
+    if (value.length == 0) return
 
-    const data = await send(message)
-    refresher()
+    post(2)
+    const response = await send(value)
+    reloader()
 
-    return data != null ? set('') : ''
+    post(3)
+    return response != null ? renew('') : ''
   }
 
   const update = (evt: any) => {
-    set(evt.target.value)
+    renew(evt.target.value)
   }
 
   return (
     <>
       <Online>
-        <Box w="full" my="4">
-          <VStack spacing="4" align="start">
-            <Text>Pesan:</Text>
+        {status === 3 ? (
+          <Success />
+        ) : (
+          <Box w="full" my="4">
+            <VStack spacing="4" align="start">
+              <Text>Pesan:</Text>
 
-            <Textarea
-              value={message}
-              onChange={update}
-              w="full"
-              placeholder="Ketikin pesan kamu disini ..."
-            />
+              <Textarea
+                value={confess}
+                onChange={update}
+                w="full"
+                placeholder="Ketikin pesan kamu disini ..."
+                isDisabled={status >= 2}
+              />
 
-            <Button onClick={submit} size="md" rounded="lg">
-              Kirim
-            </Button>
-          </VStack>
-        </Box>
+              <Button onClick={submit} size="md" rounded="lg">
+                {status === 2 ? <Spinner /> : 'Kirim'}
+              </Button>
+            </VStack>
+          </Box>
+        )}
       </Online>
 
-      <Offline>
-        <Box w="full" mt="6">
-          <Alert
-            status="error"
-            variant="subtle"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            textAlign="center"
-            height="170px"
-          >
-            <AlertIcon boxSize="40px" mr={0} />
-
-            <AlertTitle mt={4} mb={1} fontSize="lg">
-              Sedang Luring!
-            </AlertTitle>
-
-            <AlertDescription maxWidth="sm">
-              Periksa koneksi internet Anda, pastikan semuanya tidak ada kendala
-              😏
-            </AlertDescription>
-          </Alert>
-        </Box>
-      </Offline>
+      <Offline />
     </>
   )
 }
