@@ -1,46 +1,31 @@
 import { FC } from 'react'
 import moment from 'moment'
 import { Box, Spacer, Stack, Text } from '@chakra-ui/react'
+import Comments from './Comments'
 
 const Card: FC<{
   message: string
   background: any
   date: string
   childrens: any[]
-}> = ({ message, background, date, childrens }) => {
-  date = moment(date).locale('id').format('DD MMM YYYY HH:mm')
+}> = ({ message, background, date, childrens }) => (
+  <Box w="full" p={4} rounded="xl" backgroundColor={background}>
+    <Stack direction="column">
+      <Box>
+        <Text>{message}</Text>
+        <Text fontSize="xs" textColor="gray.500">
+          {moment(date).locale('id').format('DD MMM YYYY HH:mm')}
+        </Text>
+      </Box>
 
-  return (
-    <Box w="full" p={4} rounded="xl" backgroundColor={background}>
-      <Stack direction="column">
-        <Box>
-          <Text>{message}</Text>
-          <Text fontSize="xs" textColor="gray.500">
-            {date}
-          </Text>
-        </Box>
-
-        {childrens.length > 0 ? (
-          <>
-            <Spacer />
-
-            <Stack spacing="2" direction="column-reverse">
-              {childrens.map(child => (
-                <Box
-                  key={'replies-' + child.id}
-                  borderLeft="2px"
-                  borderColor="gray.500"
-                  pl={3}
-                >
-                  <Text>{child.message}</Text>
-                </Box>
-              ))}
-            </Stack>
-          </>
-        ) : null}
-      </Stack>
-    </Box>
-  )
-}
+      {childrens.length > 0 ? (
+        <>
+          <Spacer />
+          <Comments data={childrens} />
+        </>
+      ) : null}
+    </Stack>
+  </Box>
+)
 
 export default Card

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { FaSun, FaMoon } from 'react-icons/fa'
+import { IoMdSunny, IoMdMoon } from 'react-icons/io'
 import {
   Box,
   Flex,
@@ -34,7 +34,7 @@ const Navbar: FC = () => {
             onClick={toggleColorMode}
             rounded="full"
             size="md"
-            icon={colorMode == 'light' ? <FaMoon /> : <FaSun />}
+            icon={colorMode == 'light' ? <IoMdMoon /> : <IoMdSunny />}
           />
         </Box>
       </Flex>

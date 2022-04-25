@@ -26,8 +26,8 @@ const Success: FC = () => (
       </AlertTitle>
 
       <AlertDescription maxWidth="sm">
-        Makasih loh udah mau jujur, pesannya aku review dulu yaaw🤗 nanti bakal
-        ditampilin kok
+        Makasih loh udah mau jujur, pesannya aku review dulu yaaw 🤗 nanti bakal
+        ditampilin sekalian dibales kok
       </AlertDescription>
     </Alert>
   </Box>

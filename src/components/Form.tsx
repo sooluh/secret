@@ -8,23 +8,23 @@ import Offline from './Offline'
 import { send } from '../libs/fetcher'
 
 const Form: FC<{ reloader: any }> = ({ reloader }) => {
-  const [confess, renew] = useState('')
-  const [status, post] = useState(1)
+  const [message, setMessage] = useState('')
+  const [status, setStatus] = useState(1)
 
   const submit = async () => {
-    const value = String(confess).trim()
+    const value = String(message).trim()
     if (value.length == 0) return
 
-    post(2)
+    setStatus(2)
     const response = await send(value)
     reloader()
 
-    post(3)
-    return response != null ? renew('') : ''
+    setStatus(3)
+    return response != null ? setMessage('') : ''
   }
 
   const update = (evt: any) => {
-    renew(evt.target.value)
+    setMessage(evt.target.value)
   }
 
   return (
@@ -38,7 +38,7 @@ const Form: FC<{ reloader: any }> = ({ reloader }) => {
               <Text>Pesan:</Text>
 
               <Textarea
-                value={confess}
+                value={message}
                 onChange={update}
                 w="full"
                 placeholder="Ketikin pesan kamu disini ..."

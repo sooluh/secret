@@ -28,7 +28,7 @@ const Offline: FC = () => (
         </AlertTitle>
 
         <AlertDescription maxWidth="sm">
-          Periksa dulu atuh koneksi internetnya, bisi ada kendala kan?🤨
+          Periksa dulu atuh koneksi internetnya, bisi ada kendala kan? 🤨
         </AlertDescription>
       </Alert>
     </Box>
