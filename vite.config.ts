@@ -51,9 +51,10 @@ export default defineConfig({
         ]
       },
       manifest: {
-        name: 'Confess ke Suluh',
-        short_name: 'Confess unek-unek ke Suluh',
-        description: 'Sampein apapun unek-unek tentang Suluh di sini',
+        name: 'Pesan Untuk Suluh',
+        short_name: 'Kirim Pesan Rahasia ke Suluh',
+        description:
+          'Sampein aja unek-unek apapun tentang Suluh secara rahasia di sini!',
         icons: [
           {
             src: '/assets/android-chrome-36x36.png',

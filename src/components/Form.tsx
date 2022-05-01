@@ -35,13 +35,13 @@ const Form: FC<{ reloader: any }> = ({ reloader }) => {
         ) : (
           <Box w="full" my="4">
             <VStack spacing="4" align="start">
-              <Text>Pesan:</Text>
+              <Text>Unek-unek:</Text>
 
               <Textarea
                 value={message}
                 onChange={update}
                 w="full"
-                placeholder="Ketikin pesan kamu disini ..."
+                placeholder="Sampein pesan kamu di sini ..."
                 isDisabled={status >= 2}
               />
 

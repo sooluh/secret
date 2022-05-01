@@ -7,11 +7,11 @@ const supabase: SupabaseClient = createClient(
 
 const results = async () => {
   const { data, error } = await supabase
-    .from('confess')
-    .select('id, message, parent, created_at')
-    .is('deleted_at', null)
+    .from('secret')
+    .select('id, message, parent, created')
+    .is('deleted', null)
     .eq('active', true)
-    .order('created_at', {
+    .order('created', {
       ascending: false
     })
 
@@ -23,7 +23,7 @@ const results = async () => {
 }
 
 const send = async (message: string) => {
-  const { data, error } = await supabase.from('confess').insert([
+  const { data, error } = await supabase.from('secret').insert([
     {
       message: message,
       active: false

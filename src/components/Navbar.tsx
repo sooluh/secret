@@ -22,7 +22,7 @@ const Navbar: FC = () => {
             fontSize="xl"
             letterSpacing="0.5px"
           >
-            Confess
+            Pesan Untuk Suluh
           </Text>
         </Box>
 

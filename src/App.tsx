@@ -89,7 +89,7 @@ const App: FC = () => {
               <Card
                 message={item.message}
                 background={background}
-                date={item.created_at}
+                date={item.created}
                 childrens={item.childrens}
               />
             </ScaleFade>
