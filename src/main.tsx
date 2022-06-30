@@ -1,14 +1,9 @@
 import App from './App'
 import ReactDOM from 'react-dom'
-import { ChakraProvider } from '@chakra-ui/react'
+import './styles.scss'
 
 if (typeof window !== 'undefined') {
   import('./pwa')
 }
 
-ReactDOM.render(
-  <ChakraProvider resetCSS>
-    <App />
-  </ChakraProvider>,
-  document.getElementById('app')
-)
+ReactDOM.render(<App />, document.getElementById('app'))
