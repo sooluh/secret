@@ -22,7 +22,7 @@ const Sukses: FC = () => (
     <h2>Tara mak jreng!</h2>
 
     <p>
-      Makasih loh udah mau ngirimin unek-unek, pesannya aku review dulu yaaw🤗
+      Makasih loh udah mau ngirimin unek-unek, pesannya aku cek dulu yaaw🤗
       nanti bakal ditampilin sekalian dibales kok
     </p>
   </div>

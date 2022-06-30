@@ -24,8 +24,8 @@ const Sande: FC = () => (
       <h2>Mau ke NASA kak?</h2>
 
       <p>
-        Cek dulu atuh koneksi internya, bisi ada kendala kan? atau kuotanya abis
-        kak? mau aku isiin? 🤨
+        Cek dulu atuh koneksi internetnya, bisi ada kendala kan? atau kuotanya
+        abis kak? mau aku isiin? 🤨
       </p>
     </div>
   </Offline>

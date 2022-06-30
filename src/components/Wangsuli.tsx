@@ -47,7 +47,7 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
       {status === 3 && (
         <div className="pangetan sukses wangsulan">
           <p>
-            Balesannya udah dikirim, tapi tetep harus nunggu verifikasi dulu..
+            Balesannya udah dikirim, tapi tetep harus nunggu aku ngecek dulu..
             capek ya? semangat!
           </p>
         </div>

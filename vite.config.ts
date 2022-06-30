@@ -105,8 +105,8 @@ export default ({ mode }) => {
               purpose: 'any maskable'
             }
           ],
-          theme_color: '#ea2d49',
-          background_color: '#ea2d49',
+          theme_color: '#ecdbba',
+          background_color: '#ecdbba',
           start_url: '/',
           display: 'standalone',
           orientation: 'portrait',

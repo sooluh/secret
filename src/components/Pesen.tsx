@@ -20,7 +20,6 @@ const Pesen: FC<{
       </p>
 
       <Wangsuli parent={id} />
-
       <Lare childrens={childrens} />
     </div>
   )
