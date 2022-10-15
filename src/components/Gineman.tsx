@@ -1,8 +1,8 @@
-import { FC, useState } from 'react'
-import { Online } from 'react-detect-offline'
 import Sande from './Sande'
-import { send } from '../libs/fetcher'
 import Sukses from './Sukses'
+import { FC, useState } from 'react'
+import { send } from '../libs/fetcher'
+import { Online } from 'react-detect-offline'
 
 const Gineman: FC = () => {
   const [message, setMessage] = useState<string>('')
@@ -21,7 +21,7 @@ const Gineman: FC = () => {
 
     setTimeout(() => {
       setStatus(1)
-    }, 10_000)
+    }, 20_000)
 
     return response !== null ? setMessage('') : ''
   }
@@ -55,7 +55,7 @@ const Gineman: FC = () => {
             </small>
 
             <button className="kintun" onClick={submit}>
-              {status === 2 ? 'Mengirim ...' : 'Jebret'}
+              {status === 2 ? 'Otw ...' : 'Lempar!'}
             </button>
           </form>
         )}

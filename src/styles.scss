@@ -63,7 +63,8 @@ body {
   }
 
   &.wangsulan {
-    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     padding: 15px;
 
     p {
@@ -194,6 +195,7 @@ span.wigatos {
     }
 
     form.wangsuli {
+      padding: 0 14px 14px;
       font-size: 15px;
       display: block;
       position: relative;
@@ -211,12 +213,13 @@ span.wigatos {
         box-shadow: none;
         transition: 0.2s;
         padding-right: 82px;
+        border-radius: 8px;
       }
 
       button.kintun {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 14px;
         border: 1px solid transparent;
         outline: none;
         box-shadow: transparent 0px 0px 0px 1px;
@@ -239,7 +242,7 @@ span.wigatos {
 
     ul.lare {
       list-style: none;
-      padding: 5px 15px;
+      padding: 0 15px 5px;
 
       li {
         background-color: rgba(0, 0, 0, 0.2);
@@ -260,6 +263,10 @@ span.wigatos {
             border: 2px solid #18978f;
             padding: 2px 8px;
             border-radius: 5px;
+          }
+
+          &:first-child {
+            margin-top: 0;
           }
         }
 
