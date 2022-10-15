@@ -18,7 +18,7 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
 
     setTimeout(() => {
       setStatus(1)
-    }, 10_000)
+    }, 20_000)
 
     return response !== null ? setMessage('') : ''
   }
@@ -35,19 +35,19 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           onChange={update}
           type="text"
           name="wangsuli"
-          placeholder="mau balesin?"
+          placeholder="mau nanggepin ini?"
           disabled={status === 2}
         />
 
         <button className="kintun" onClick={submit}>
-          {status === 2 ? 'Membalas ...' : 'Bales'}
+          {status === 2 ? 'Otw ...' : 'Sikat'}
         </button>
       </form>
 
       {status === 3 && (
         <div className="pangetan sukses wangsulan">
           <p>
-            Balesannya udah dikirim, tapi tetep harus nunggu aku ngecek dulu..
+            Balesannya udah dikirim, tapi tetep harus nunggu aku cek dulu..
             capek ya? semangat!
           </p>
         </div>

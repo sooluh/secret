@@ -1,6 +1,6 @@
-import { FC, useState, useEffect } from 'react'
 import Pesen from './Pesen'
 import results from '../libs/fetcher'
+import { FC, useState, useEffect } from 'react'
 
 const Pangangge: FC = () => {
   const [messages, setMessages] = useState<any[]>()
@@ -45,7 +45,7 @@ const Pangangge: FC = () => {
               childrens={item.childrens}
             />
           ))
-        : 'Memuat ...'}
+        : 'Tunggu bentaran ...'}
     </div>
   )
 }

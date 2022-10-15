@@ -1,6 +1,6 @@
+import Lare from './Lare'
 import { FC } from 'react'
 import moment from 'moment'
-import Lare from './Lare'
 import Wangsuli from './Wangsuli'
 
 const Pesen: FC<{
