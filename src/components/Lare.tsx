@@ -6,8 +6,6 @@ const Lare: FC<{ childrens?: any[] }> = ({ childrens }) => {
     return moment(date).locale('id').format('DD MMM YYYY HH:mm')
   }
 
-  console.log(childrens)
-
   return childrens && childrens.length > 0 ? (
     <ul className="lare">
       {childrens.reverse().map(child => (
