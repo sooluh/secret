@@ -1,7 +1,16 @@
-import { FC } from 'react'
 import moment from 'moment'
+import fetch from '../libs/fetcher'
+import { FC, useState, useEffect } from 'react'
 
-const Lare: FC<{ childrens?: any[] }> = ({ childrens }) => {
+const Lare: FC<{ id: number }> = ({ id }) => {
+  const [childrens, setChildrens] = useState<any[]>()
+
+  useEffect(() => {
+    fetch(id).then((childrens: any) => {
+      setChildrens(childrens)
+    })
+  }, [])
+
   const date = (date: string) => {
     return moment(date).locale('id').format('DD MMM YYYY HH:mm')
   }

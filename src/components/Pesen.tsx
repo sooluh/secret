@@ -3,12 +3,11 @@ import { FC } from 'react'
 import moment from 'moment'
 import Wangsuli from './Wangsuli'
 
-const Pesen: FC<{
-  id: number
-  message: string
-  date: string
-  childrens?: any[]
-}> = ({ id, message, date, childrens }) => {
+const Pesen: FC<{ id: number; message: string; date: string }> = ({
+  id,
+  message,
+  date
+}) => {
   date = moment(date).locale('id').format('DD MMM YYYY HH:mm')
 
   return (
@@ -20,7 +19,7 @@ const Pesen: FC<{
       </p>
 
       <Wangsuli parent={id} />
-      <Lare childrens={childrens} />
+      <Lare id={id} />
     </div>
   )
 }

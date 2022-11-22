@@ -1,34 +1,14 @@
 import Pesen from './Pesen'
-import results from '../libs/fetcher'
+import fetch from '../libs/fetcher'
 import { FC, useState, useEffect } from 'react'
 
 const Pangangge: FC = () => {
   const [messages, setMessages] = useState<any[]>()
 
-  const reload = () => {
-    results().then((messages: any) => {
-      const childrens = messages.filter((item: any) => {
-        return item.parent != null
-      })
-
-      const parents = messages
-        .filter((item: any) => {
-          return item.parent == null
-        })
-        .map((parent: any) => {
-          parent.childrens = childrens.filter((child: any) => {
-            return child.parent == parent.id
-          })
-
-          return parent
-        })
-
+  useEffect(() => {
+    fetch().then((parents: any) => {
       setMessages(parents)
     })
-  }
-
-  useEffect(() => {
-    reload()
   }, [])
 
   return (
@@ -42,7 +22,6 @@ const Pangangge: FC = () => {
               id={item.id}
               message={item.message}
               date={item.created}
-              childrens={item.childrens}
             />
           ))
         : 'Tunggu bentaran ...'}
