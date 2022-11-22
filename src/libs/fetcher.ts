@@ -5,15 +5,20 @@ const supabase: SupabaseClient = createClient(
   import.meta.env.VITE_SUPABASE_ANON || ''
 )
 
-const results = async () => {
-  const { data, error } = await supabase
+const fetch = async (parent: number | null = null) => {
+  const query = supabase
     .from('messages')
-    .select('id, message, owner, parent, created')
+    .select('id, message, owner, created')
     .is('deleted', null)
     .eq('active', true)
     .order('created', {
       ascending: false
     })
+
+  const { data, error } =
+    parent === null
+      ? await query.is('parent', null).limit(50)
+      : await query.eq('parent', parent).limit(10)
 
   if (error) {
     console.log(error)
@@ -39,4 +44,4 @@ const send = async (message: string, parent?: number) => {
 }
 
 export { send }
-export default results
+export default fetch
