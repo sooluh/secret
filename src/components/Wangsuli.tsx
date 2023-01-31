@@ -35,20 +35,20 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           onChange={update}
           type="text"
           name="wangsuli"
-          placeholder="mau nanggepin ini?"
+          placeholder="tafadhol ditanggapi"
           disabled={status === 2}
         />
 
         <button className="kintun" onClick={submit}>
-          {status === 2 ? 'Otw ...' : 'Sikat'}
+          {status === 2 ? '...' : 'Balas'}
         </button>
       </form>
 
       {status === 3 && (
         <div className="pangetan sukses wangsulan">
           <p>
-            Balesannya udah dikirim, tapi tetep harus nunggu aku cek dulu..
-            capek ya? semangat!
+            Tanggapan anta/anti ana cek dulu ya, InsyaAllah kalo perlu
+            ditampilkan ana tampilkan, Jazakumullah.
           </p>
         </div>
       )}

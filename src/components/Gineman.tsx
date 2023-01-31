@@ -43,19 +43,19 @@ const Gineman: FC = () => {
               value={message}
               onChange={update}
               name="gineman"
-              placeholder="fafifu wasweswos disini!"
+              placeholder="jangan lupa bismillah dulu"
               disabled={status === 2}
             ></textarea>
 
             <small>
               <span className="wigatos">*</span>
               <span>
-                aku gabakal tau siapa yang ngirim ini, kecuali pake insting wkwk
+                ana ngga tau siapa yang ngirim, tapi ana bisa pake insting hehe
               </span>
             </small>
 
             <button className="kintun" onClick={submit}>
-              {status === 2 ? 'Otw ...' : 'Lempar!'}
+              {status === 2 ? '...' : 'Tafadhol'}
             </button>
           </form>
         )}

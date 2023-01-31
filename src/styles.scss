@@ -31,7 +31,7 @@ body {
   color: rgba(255, 255, 255, 0.92);
   padding: 20px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 4px;
 
   &.sande {
     background-color: #c84b31;
@@ -81,19 +81,19 @@ span.wigatos {
   background-color: #ecdbba;
   color: rgb(45, 55, 72);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
 
   h1 {
     font-size: 25px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   p.katrangan {
     line-height: 1.3em;
     font-size: 16px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   form {
@@ -111,7 +111,7 @@ span.wigatos {
       height: 80px;
       margin-bottom: 8px;
       font-size: 15px;
-      border-radius: 5px;
+      border-radius: 2.5px;
       outline: none;
       border-color: transparent;
       box-shadow: transparent 0px 0px 0px 1px;
@@ -144,7 +144,7 @@ span.wigatos {
       padding: 10px 13px;
       font-size: 15px;
       display: block;
-      border-radius: 8px;
+      border-radius: 4px;
       margin: 0;
       margin-left: auto;
       cursor: pointer;
@@ -170,7 +170,7 @@ span.wigatos {
 
   .pesen {
     background-color: #2d3748;
-    border-radius: 8px;
+    border-radius: 4px;
     margin-bottom: 20px;
 
     &:last-child {
@@ -180,7 +180,7 @@ span.wigatos {
     p.unek-unek {
       line-height: 1.3em;
       padding: 14px;
-      border-radius: 8px;
+      border-radius: 4px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
 
@@ -213,7 +213,7 @@ span.wigatos {
         box-shadow: none;
         transition: 0.2s;
         padding-right: 82px;
-        border-radius: 8px;
+        border-radius: 4px;
       }
 
       button.kintun {
@@ -226,7 +226,7 @@ span.wigatos {
         background-color: rgb(45, 55, 72);
         color: #fff;
         padding: 7px 12px;
-        border-radius: 5px;
+        border-radius: 2.5px;
         margin: 7px 12px;
         font-size: 13px;
         display: block;
@@ -248,21 +248,23 @@ span.wigatos {
         background-color: rgba(0, 0, 0, 0.2);
         margin: 10px 0;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 2.5px;
         position: relative;
         font-size: 14px;
 
         &.gadhah {
-          padding-top: 48px;
+          padding-top: 42px;
 
           &:before {
             content: 'Suluh';
+            font-weight: 500;
+            background: #ecdbba;
+            color: #2d3748;
             font-size: 13px;
             position: absolute;
             top: 10px;
-            border: 2px solid #18978f;
             padding: 2px 8px;
-            border-radius: 5px;
+            border-radius: 2.5px;
           }
 
           &:first-child {

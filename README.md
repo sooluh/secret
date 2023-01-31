@@ -7,6 +7,7 @@ This project was bootstrapped with [Vite (React)](https://vitejs.dev/) and power
 > This project is not completely finished, nor is the documentation complete at all.
 
 ## Supabase Setup
+
 Query to create table `messages`:
 
 ```sql

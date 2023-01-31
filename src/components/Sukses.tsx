@@ -19,11 +19,11 @@ const Sukses: FC = () => (
       <path d="M9 12l2 2l4 -4"></path>
     </svg>
 
-    <h2>Tara mak jreng!</h2>
+    <h2>Syukron akh/ukh</h2>
 
     <p>
-      Makasih loh udah mau ngirimin unek-unek, pesannya aku cek dulu yaaw🤗
-      nanti bakal ditampilin sekalian dibales kok
+      Jazakumullah khairan katsiran, nasihat anta/anti ana tampung InsyaAllah.
+      Kalau ana rasa ini perlu ditampilkan, ana akan tampilkan secepatnya 🙏🏻
     </p>
   </div>
 )

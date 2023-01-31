@@ -24,7 +24,7 @@ const Pangangge: FC = () => {
               date={item.created}
             />
           ))
-        : 'Tunggu bentaran ...'}
+        : 'Sedang memuat ...'}
     </div>
   )
 }
